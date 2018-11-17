@@ -30,10 +30,13 @@ class Fixtures extends Component{
     }else {
       return (
         <div calss='App'>
+        <h1>The Fixtures</h1>
         <ul>
         {fixtures.data.fixtures.map(fixtures=>(
-          <li key={fixtures.id}>
+        <li key={fixtures.id}>
           time:{fixtures.time}
+          date:{fixtures.date}
+          league_id:{fixtures.league_id}
 
           </li>
         ))};

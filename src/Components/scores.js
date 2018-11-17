@@ -30,6 +30,7 @@ render() {
   }else {
     return (
       <div calss='Score'>
+      <h1>All Scores</h1>
       <ul>
       {scores.data.match.map(match=>(
         <li key={match.id}>

@@ -34,6 +34,7 @@ render() {
   }else {
     return (
       <div calss='App'>
+      <h1>Live Scores</h1>
       <ul>
       {countries.data.country.map(country=>(
         <li key={country.id}>

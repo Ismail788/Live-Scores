@@ -30,6 +30,7 @@ render() {
   }else {
     return (
       <div calss='Country'>
+      <h1>All Countries</h1>
       <ul>
       {countries.data.country.map(country=>(
         <li key={country.id}>

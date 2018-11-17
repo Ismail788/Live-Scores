@@ -6,6 +6,7 @@ class Form extends Component{
   render(){
     return(
       <form>
+      <h1>Football Items</h1>
   <label>
     Name:
     <input type="text" name="name" />
