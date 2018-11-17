@@ -27,20 +27,23 @@ class Fixtures extends Component{
     let  {isloaded, fixtures} = this.state;
     if(!isloaded){
       return<div>loading...</div>
-    return(
-      <div calss='Fixture'>
-      <ul>
-      {fixtures.data.fixtures.map(fixture=>(
-        <li key={fixture.id}>
-        time:{fixture.time}
-        </li>
-      ))};
-   </ul>
-      </div>
-    );
-   }
+    }else {
+      return (
+        <div calss='App'>
+        <ul>
+        {fixtures.data.fixtures.map(fixtures=>(
+          <li key={fixtures.id}>
+          time:{fixtures.time}
 
-     }
+          </li>
+        ))};
+      </ul>
+   </div>
 
-     }
-export default Fixtures;
+   );
+  }
+
+    }
+
+    }
+  export default Fixtures;
