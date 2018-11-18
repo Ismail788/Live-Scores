@@ -36,8 +36,9 @@ class App extends Component {
         } else {
           this.setState({
             countryLiveScores: [],
-            countryName: null,
-            countryId: null
+            countryId: null,
+            countryName: null
+         
           })
         }
       })
