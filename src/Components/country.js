@@ -9,6 +9,7 @@ class Countries extends Component {
     this.state = {
       countries: [],
       isloaded: false,
+      success: true
     }
   }
 
@@ -16,29 +17,38 @@ class Countries extends Component {
     fetch(`http://livescore-api.com/api-client/countries/list.json?key=${Demo_key}&secret=${Demo_secret}`)
       .then((response) => response.json())
       .then((json) => {
-        this.setState({
-          isloaded: true,
-          countries: json,
-        })
+        if (json.success) {
+          this.setState({
+            isloaded: true,
+            success: true,
+            countries: json,
+          })
+        } else {
+          this.setState({
+            isloaded: true,
+            success: false,
+          })
+        }
+
       })
   }
 
-  onCountrySelect = e => {
-    e.preventDefault();
-    const countryId = e.target.value;
-  }
-
   render() {
-    let { isloaded, countries } = this.state;
+    let { isloaded, success, countries } = this.state;
 
     if (!isloaded) {
       return <div>loading...</div>
     }
 
+    if (!success) {
+      return <div>error while fetching countries</div>
+    }
+
     return (
       <div calss='Country'>
         <h1>All Countries</h1>
-        <select onChange={this.onCountrySelect}>
+        <select onChange={this.props.onCountrySelect}>
+          <option key={0} value={0}>Select a country</option>
           {
             countries.data.country.map(country => (
               <option key={country.id} value={country.id}>
