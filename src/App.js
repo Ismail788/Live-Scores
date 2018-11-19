@@ -5,6 +5,8 @@ import Fixtures from './Components/fixtures';
 import Scores from './Components/scores';
 import CountryScores from './Components/country-scores';
 import './App.css';
+import {Route, NavLink, HashRouter} from 'react-router-do';
+
 
 const Demo_key = '6r94GgdPiJ5ciqdx';
 const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
@@ -54,13 +56,34 @@ class App extends Component {
 
   render() {
     return (
-      <div calss='App'>
-        <Form />
+      <HashRouter>
+   <div className = "main-container">
+		<ul className="header">
+		<li><NavLink exact to="/">Country</NavLink></li>
+		<li><NavLink to="/scores">scores</NavLink></li>
+		<li><NavLink to="/fixtures">fixtures</NavLink></li>
+		</ul>
+			 <h1>Football Info</h1>
+   <div className="content">
+			<Route exact path="/" component={Countries}/>
+			<Route path="/Scores" component={Scores}/>
+			<Route path="/Fixtures" component={Fixtures}/>
+
+		</div>
+     
+      <div class='Container'>
+      <section>
+      <Form />
         <Countries onCountrySelect={this.onCountrySelect} />
         {this.renderScores()}
         <Fixtures />
+      </section>
+     
       </div>
+      </div>
+      </HashRouter>
     );
+   
   }
 }
 
