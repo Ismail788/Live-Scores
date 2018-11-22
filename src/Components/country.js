@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 const Demo_key = '6r94GgdPiJ5ciqdx';
 const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
 
@@ -45,7 +44,8 @@ class Countries extends Component {
     }
 
     return (
-      <div calss='Country'>
+      <div className='main-container'>
+      <div calssName='contry'>
         <h1>All Countries</h1>
         <select onChange={this.props.onCountrySelect}>
           <option key={0} value={0}>Select a country</option>
@@ -57,6 +57,7 @@ class Countries extends Component {
             ))
           }
         </select>
+        </div>
       </div>
     );
   }

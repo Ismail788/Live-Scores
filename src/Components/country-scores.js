@@ -16,7 +16,8 @@ class CountryScores extends Component {
     }
 
     return (
-      <div className='Score'>
+      <div className='main-container'>
+      <div className='country-score'>
         <h1>{countryName} Live Scores</h1>
         <ul>
           {countryLiveScores.map(match => (
@@ -27,6 +28,7 @@ class CountryScores extends Component {
             </li>
           ))};
         </ul>
+      </div>
       </div>
     );
   }

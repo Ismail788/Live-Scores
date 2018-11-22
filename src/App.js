@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Form from './Components/form';
 import Countries from './Components/country';
 import Fixtures from './Components/fixtures';
 import Scores from './Components/scores';
 import CountryScores from './Components/country-scores';
 import './App.css';
-import {Route, NavLink, HashRouter} from 'react-router-do';
+import {Route, NavLink, HashRouter} from 'react-router-dom';
 
 
 const Demo_key = '6r94GgdPiJ5ciqdx';
@@ -18,6 +17,7 @@ class App extends Component {
     this.state = {
       countryId: null
     }
+  
   }
 
   onCountrySelect = e => {
@@ -48,41 +48,41 @@ class App extends Component {
 
   renderScores = () => {
     if (this.state.countryId) {
-      return <CountryScores countryLiveScores={this.state.countryLiveScores} countryId={this.state.countryId} countryName={this.state.countryName} />
+      return <CountryScores 
+      countryLiveScores={this.state.countryLiveScores} 
+      countryId={this.state.countryId} 
+      countryName={this.state.countryName} />
     } else {
-      return <Scores />
+      return 
     }
   }
 
   render() {
     return (
       <HashRouter>
-   <div className = "main-container">
-		<ul className="header">
+    <div className='main-container'>
+     <h1>Live football Web-page</h1>
+     <div className = 'container'>
+  <ul className="header">
 		<li><NavLink exact to="/">Country</NavLink></li>
-		<li><NavLink to="/scores">scores</NavLink></li>
+		<li><NavLink to="/CountryScores">countryScores</NavLink></li>
 		<li><NavLink to="/fixtures">fixtures</NavLink></li>
-		</ul>
-			 <h1>Football Info</h1>
-   <div className="content">
+    <li><NavLink to="/Scores">Scores</NavLink></li>
+	</ul>
+	    <div className="content">
 			<Route exact path="/" component={Countries}/>
 			<Route path="/Scores" component={Scores}/>
 			<Route path="/Fixtures" component={Fixtures}/>
-
-		</div>
-     
-      <div class='Container'>
-      <section>
-      <Form />
+      <Route path="/Scores" component={Scores}/>
+	  </div>
+    <section>
         <Countries onCountrySelect={this.onCountrySelect} />
         {this.renderScores()}
-        <Fixtures />
-      </section>
-     
+    </section>
       </div>
-      </div>
+      </div> 
       </HashRouter>
-    );
+      );
    
   }
 }

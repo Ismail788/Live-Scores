@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 const Demo_key = '6r94GgdPiJ5ciqdx';
 const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
@@ -11,8 +18,10 @@ class Fixtures extends Component {
       success: true,
       isLoaded: false,
     }
+  
   }
-
+ 
+  
   componentDidMount() {
     fetch(`http://livescore-api.com/api-client/fixtures/matches.json?key=${Demo_key}&secret=${Demo_secret}`)
       .then((response) => response.json())
@@ -31,6 +40,7 @@ class Fixtures extends Component {
         }
       })
   }
+ 
   render() {
     let { isloaded, success, fixtures } = this.state;
 
@@ -43,20 +53,44 @@ class Fixtures extends Component {
     }
 
     return (
-      <div calss='App'>
-        <h1>The Fixtures</h1>
-        <ul>
-          {fixtures.data.fixtures.map(fixtures => (
-            <li key={fixtures.id}>
-              time:{fixtures.time} |  date:{fixtures.date} |  league_id:{fixtures.league_id}
-
-            </li>
-          ))};
-      </ul>
-      </div>
-
-    );
-  }
+      <div className='main-container'>
+      <div className='fixtures'>
+      <Paper className='scores-table'>
+      <h3>All fixtures</h3>
+      <Table className='scores'>
+        <TableHead>
+          <TableRow>
+            <TableCell numeric>Date</TableCell>
+            <TableCell numeric>Time</TableCell>
+            <TableCell numeric>Home_name</TableCell>
+            <TableCell numeric>Away_name</TableCell>
+            <TableCell numeric>Location</TableCell>
+            <TableCell numeric>League_id</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {fixtures.data.fixtures.map(row => (
+            
+              <TableRow key={row.date}>
+                <TableCell component="th" scope="row">
+                  {row.home_name}}
+                </TableCell>
+                <TableCell numeric>{row.date}</TableCell>
+                <TableCell numeric>{row.time}</TableCell>
+                <TableCell numeric>{row.home_name}</TableCell>
+                <TableCell numeric>{row.away_name}</TableCell>
+                <TableCell numeric>{row.location}</TableCell>
+                <TableCell numeric>{row.league_id}</TableCell>
+               </TableRow>
+            )
+          )}
+        </TableBody>
+      </Table>
+    </Paper>
+    </div>
+    </div>
+   );
+   }
 
 }
 export default Fixtures;
