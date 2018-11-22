@@ -59,8 +59,9 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter>
-    <div className='main-container'>
+    <HashRouter>
+     <div className='main-container'>
+    
      <h1>Live Football Web-page</h1>
      <div className = 'container'>
   <ul className="header">
@@ -69,22 +70,21 @@ class App extends Component {
 		<li><NavLink to="/Fixtures">fixtures</NavLink></li>
     <li><NavLink to="/Scores">Scores</NavLink></li>
 	</ul>
-	    <div className="content">
-			<Route exact path="/" component={Countries}/>
-			<Route path="/CountryScores" component={CountryScores}/>
-			<Route path="/Fixtures" component={Fixtures}/>
-      <Route path="/Scores" component={Scores}/>
+	  <div className="content">
+		 <Route exact path="/" component={Countries}/>
+		 <Route path="/CountryScores" component={CountryScores}/>
+		 <Route path="/Fixtures" component={Fixtures}/>
+     <Route path="/Scores" component={Scores}/>
 	  </div>
     <section>
         <Countries onCountrySelect={this.onCountrySelect} />
         {this.renderScores()}
     </section>
       </div>
-      </div> 
-      </HashRouter>
+      </div>
+   </HashRouter>
       );
-   
-  }
+    }
 }
 
 export default App;

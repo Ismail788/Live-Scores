@@ -36,6 +36,9 @@ ul.header li a {
   display: inline-block;
   float: right;
 }
+.avatar{
+
+}
 .main-container {
   display: -ms-flexbox;
   display: flex;
@@ -47,8 +50,8 @@ ul.header li a {
   width: 100%;
   min-height: 315px;
   background-color: #111  !important;
-  margin-right: 20px !important;
-  margin-bottom: 20px !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
   padding: 40px !important;
   
 

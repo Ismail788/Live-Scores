@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import {Route, NavLink, HashRouter} from 'react-router-dom';
 import myfetch from '../util/fetch';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { TableRow, TableCell, TableBody, Paper, Table, TableHead} from '@material-ui/core';
+
 
 class Scores extends Component {
   constructor() {
@@ -57,7 +53,6 @@ class Scores extends Component {
      <Table className='scores'>
           <TableHead>
             <TableRow>
-              <TableCell>#</TableCell>
               <TableCell numeric>Home-name</TableCell>
               <TableCell numeric>Away-name</TableCell>
               <TableCell numeric>Score</TableCell>
@@ -67,11 +62,10 @@ class Scores extends Component {
           <TableBody>
             {scores.data.match.map(row => (
               <TableRow key={row.id}>
-              <TableCell>{row.home_name}</TableCell>
-                  <TableCell numeric>{row.home_name}</TableCell>
-                  <TableCell numeric>{row.away_name}</TableCell>
-                  <TableCell numeric>{row.score}</TableCell>
-                  <TableCell numeric>{row.status}</TableCell>
+              <TableCell numeric>{row.home_name}</TableCell>
+              <TableCell numeric>{row.away_name}</TableCell>
+              <TableCell numeric>{row.score}</TableCell>
+              <TableCell numeric>{row.status}</TableCell>
                 </TableRow> 
                )
             )}

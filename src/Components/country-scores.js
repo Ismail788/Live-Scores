@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TableRow, TableCell, TableBody, Paper, Table, TableHead} from '@material-ui/core';
 
 class CountryScores extends Component {
   constructor() {
@@ -18,15 +19,25 @@ class CountryScores extends Component {
     return (
       <div className='country-score'>
         <h1>{countryName} Live Scores</h1>
-        <ul>
-          {countryLiveScores.map(match => (
-            <li key={match.id}>
-              home_name:{match.home_name}
-              score:{match.score}
-
-            </li>
+        <table className=''>
+        <thead>
+          <TableRow>
+          <TableCell numeric>Home-name</TableCell>
+          <TableCell numeric>score</TableCell>
+          </TableRow>
+        </thead>
+        <TableBody>
+        {countryLiveScores.map(match => (
+            <TableRow key={match.id}> 
+            <TableCell numeric>{match.home_name}</TableCell> 
+           <TableCell numeric>{match.score}</TableCell>
+              
+           </TableRow>
+          
           ))};
-        </ul>
+         </TableBody>
+         
+        </table>
       </div>
     );
   }
