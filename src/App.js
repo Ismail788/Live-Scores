@@ -65,13 +65,13 @@ class App extends Component {
      <div className = 'container'>
   <ul className="header">
 		<li><NavLink exact to="/">Country</NavLink></li>
-		<li><NavLink to="/CountryScores">countryScores</NavLink></li>
-		<li><NavLink to="/fixtures">fixtures</NavLink></li>
+		<li><NavLink to="/CountryScores">CountryScores</NavLink></li>
+		<li><NavLink to="/Fixtures">fixtures</NavLink></li>
     <li><NavLink to="/Scores">Scores</NavLink></li>
 	</ul>
 	    <div className="content">
 			<Route exact path="/" component={Countries}/>
-			<Route path="/Scores" component={Scores}/>
+			<Route path="/CountryScores" component={CountryScores}/>
 			<Route path="/Fixtures" component={Fixtures}/>
       <Route path="/Scores" component={Scores}/>
 	  </div>
