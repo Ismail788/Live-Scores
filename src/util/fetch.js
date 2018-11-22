@@ -3,7 +3,7 @@ const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
 
 // export const root_url = "http://livescore-api.com/api-client/";
 
-const addParamToUrl = (url, param) => url += ( url.match( /[\?]/g ) ? '&' : '?' ) + param;
+const addParamToUrl = (url, param) => url += ( url.match( /[?]/g ) ? '&' : '?' ) + param;
 
 export default (url, options = {}) => {
 

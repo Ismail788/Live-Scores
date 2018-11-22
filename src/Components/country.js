@@ -44,9 +44,9 @@ class Countries extends Component {
     }
 
     return (
-      <div className='main-container'>
-      <div calssName='contry'>
+      <div className='country-container'>
         <h1>All Countries</h1>
+  
         <select onChange={this.props.onCountrySelect}>
           <option key={0} value={0}>Select a country</option>
           {
@@ -58,7 +58,7 @@ class Countries extends Component {
           }
         </select>
         </div>
-      </div>
+     
     );
   }
 }

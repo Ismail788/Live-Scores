@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <HashRouter>
     <div className='main-container'>
-     <h1>Live football Web-page</h1>
+     <h1>Live Football Web-page</h1>
      <div className = 'container'>
   <ul className="header">
 		<li><NavLink exact to="/">Country</NavLink></li>

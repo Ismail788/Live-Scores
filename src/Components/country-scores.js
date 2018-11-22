@@ -16,7 +16,6 @@ class CountryScores extends Component {
     }
 
     return (
-      <div className='main-container'>
       <div className='country-score'>
         <h1>{countryName} Live Scores</h1>
         <ul>
@@ -28,7 +27,6 @@ class CountryScores extends Component {
             </li>
           ))};
         </ul>
-      </div>
       </div>
     );
   }

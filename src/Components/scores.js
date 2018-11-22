@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
+import {Route, NavLink, HashRouter} from 'react-router-dom';
 import myfetch from '../util/fetch';
-import PropTypes from 'prop-types';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
-//const Demo_key = '6r94GgdPiJ5ciqdx';
-//const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
-
 
 class Scores extends Component {
   constructor() {
@@ -21,9 +17,6 @@ class Scores extends Component {
       success: true,
     }
   }
-
-
-
   componentDidMount() {
     //fetch(`http://livescore-api.com/api-client/scores/live.json?key=${Demo_key}&secret=${Demo_secret}`)
     myfetch(`http://livescore-api.com/api-client/scores/live.json?bla=1`)
@@ -32,9 +25,7 @@ class Scores extends Component {
         if (json.success) {
           this.setState({
             isloaded: true,
-            scores: json,
-
-            success: true
+            scores: json, success: true
           })
         } else {
           this.setState({
@@ -46,6 +37,7 @@ class Scores extends Component {
   }
 
   render() {
+    
     let { isloaded, success, scores } = this.state;
 
     if (!isloaded) {
@@ -55,13 +47,14 @@ class Scores extends Component {
     if (!success) {
       return <div>error while fetching scores</div>
     }
-
+   
     return (
-      <div className='main-container'>
-      <div className='score'>
-      <Paper className='scores-table'>
-      <h2>All matches scores</h2>
-        <Table className='scores'>
+   
+    <div className='main-container'>
+   <div className='score'>
+     <Paper className='score-table'>
+     <h2>All Matches Scores</h2>
+     <Table className='scores'>
           <TableHead>
             <TableRow>
               <TableCell>#</TableCell>
@@ -74,19 +67,20 @@ class Scores extends Component {
           <TableBody>
             {scores.data.match.map(row => (
               <TableRow key={row.id}>
-              <TableCell>{row.home_name}}</TableCell>
-                  <TableCell string>{row.home_name}</TableCell>
-                  <TableCell string>{row.away_name}</TableCell>
+              <TableCell>{row.home_name}</TableCell>
+                  <TableCell numeric>{row.home_name}</TableCell>
+                  <TableCell numeric>{row.away_name}</TableCell>
                   <TableCell numeric>{row.score}</TableCell>
-                  <TableCell string>{row.status}</TableCell>
-                </TableRow>
-              )
+                  <TableCell numeric>{row.status}</TableCell>
+                </TableRow> 
+               )
             )}
-          </TableBody>
-        </Table>
+         </TableBody>
+       </Table>
       </Paper>
       </div>
-      </div>
+    </div>
+   
     );
   }
 }

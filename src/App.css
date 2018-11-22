@@ -7,13 +7,13 @@ html{
 body{
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
-  background: #4e66f0;
   color: #0000009f;
 }
 h1{
   text-align: left;
   float: left;
   margin: 0;
+  -webkit-text-fill-color: #eff5ea;
 }
 ul.header li {
   display: inline;
@@ -28,7 +28,7 @@ ul.header {
 
 }
 ul.header li a {
-  background-color: whitesmoke;
+  -webkit-text-fill-color: #eff5ea;
   color: #000;
   font-weight: bold;
   text-decoration: none;
@@ -44,9 +44,16 @@ ul.header li a {
   -ms-flex-pack: center;
   justify-content: center;
   min-height: 315px;
+  width: 100%;
+  min-height: 315px;
+  background-color: #111  !important;
+  margin-right: 20px !important;
+  margin-bottom: 20px !important;
+  padding: 40px !important;
+  
 
 }
-.score{
+.main-container.score{
 width: 100%;
 min-height: 315px;
 background-color: #030e1f !important;
@@ -55,20 +62,56 @@ margin-bottom: 17px !important;
 padding: 0px !important;
 
 }
+.score{
+  width: 100%;
+  min-height: 315px;
+  background-color: #535750   !important;
+  margin-right: 0px !important;
+  margin-bottom: 0px !important;
+  padding: 5px !important;
+}
+.score-table{
+  color: red;
+  text-align: center;
+}
 .fixtures{
-background-color: #030e1f !important;
-margin-right: 10px !important;
-margin-bottom: 10px !important;
-padding: 0px !important;
+  width: 100%;
+min-height: 315px;
+background-color: #535750   !important;
+margin-right: 0px !important;
+margin-bottom: 0px !important;
+padding: 5px !important;
 }
-.country{
-  float:left;
-  margin-block-end: 0%;
+.fixture-table{
+  color: red;
+  text-align: center;
 }
+.country-container{
+  width: 100%;
+min-height: 315px;
+background-color: #535750   !important;
+margin-right: 0px !important;
+margin-bottom: 0px !important;
+padding: 5px !important;
+
+}
+ .country-score{
+  width: 100%;
+  min-height: 315px;
+  background-color: #535750 !important;
+  margin-right: 17px !important;
+  margin-bottom: 17px !important;
+  padding: 0px !important;
+ }
+ .main-container.h1{
+   text-decoration-color: white;
+
+ }
+
 section{
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-gap: 30px;
+  grid-gap: 17px;
   padding: 24px 0;
   border-bottom: 1px solid rgb(179, 204, 238);
 }
