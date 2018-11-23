@@ -36,9 +36,6 @@ ul.header li a {
   display: inline-block;
   float: right;
 }
-.avatar{
-
-}
 .main-container {
   display: -ms-flexbox;
   display: flex;
@@ -53,9 +50,7 @@ ul.header li a {
   margin-right: 10px !important;
   margin-bottom: 10px !important;
   padding: 40px !important;
-  
-
-}
+  }
 .main-container.score{
 width: 100%;
 min-height: 315px;
@@ -63,8 +58,10 @@ background-color: #030e1f !important;
 margin-right: 17px !important;
 margin-bottom: 17px !important;
 padding: 0px !important;
-
 }
+.content {
+  background-color: #535750 ;
+  padding: 40px;}
 .score{
   width: 100%;
   min-height: 315px;
@@ -78,7 +75,7 @@ padding: 0px !important;
   text-align: center;
 }
 .fixtures{
-  width: 100%;
+width: 100%;
 min-height: 315px;
 background-color: #535750   !important;
 margin-right: 0px !important;

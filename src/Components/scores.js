@@ -31,11 +31,8 @@ class Scores extends Component {
         }
       })
   }
-
   render() {
-    
     let { isloaded, success, scores } = this.state;
-
     if (!isloaded) {
       return <div>loading...</div>
     }
@@ -43,22 +40,20 @@ class Scores extends Component {
     if (!success) {
       return <div>error while fetching scores</div>
     }
-   
     return (
-   
-    <div className='main-container'>
+   <div className='main-container'>
    <div className='score'>
      <Paper className='score-table'>
      <h2>All Matches Scores</h2>
      <Table className='scores'>
-          <TableHead>
-            <TableRow>
+     <TableHead>
+        <TableRow>
               <TableCell numeric>Home-name</TableCell>
               <TableCell numeric>Away-name</TableCell>
               <TableCell numeric>Score</TableCell>
               <TableCell numeric>Status</TableCell>
-            </TableRow>
-          </TableHead>
+       </TableRow>
+     </TableHead>
           <TableBody>
             {scores.data.match.map(row => (
               <TableRow key={row.id}>
@@ -66,7 +61,7 @@ class Scores extends Component {
               <TableCell numeric>{row.away_name}</TableCell>
               <TableCell numeric>{row.score}</TableCell>
               <TableCell numeric>{row.status}</TableCell>
-                </TableRow> 
+           </TableRow> 
                )
             )}
          </TableBody>
@@ -78,7 +73,6 @@ class Scores extends Component {
     );
   }
 }
-
 export default Scores;
 
 

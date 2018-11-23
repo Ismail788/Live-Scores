@@ -7,10 +7,10 @@ import './App.css';
 import {Route, NavLink, HashRouter} from 'react-router-dom';
 
 
-const Demo_key = '6r94GgdPiJ5ciqdx';
-const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
+ const Demo_key = '6r94GgdPiJ5ciqdx';
+ const Demo_secret = '70Qx0KjZN2uD6jfdLohrFuhXem9wNm4U';
 
-class App extends Component {
+  class App extends Component {
   constructor() {
     super();
 
@@ -25,8 +25,7 @@ class App extends Component {
     const countrySelector = e.target;
     const countryId = countrySelector.value;
     const countryName = countrySelector[countrySelector.selectedIndex].text;
-
-    fetch(`http://livescore-api.com/api-client/scores/live.json?key=${Demo_key}&secret=${Demo_secret}&country=${countryId}`)
+  fetch(`http://livescore-api.com/api-client/scores/live.json?key=${Demo_key}&secret=${Demo_secret}&country=${countryId}`)
       .then((response) => response.json())
       .then((json) => {
         if (json.success) {
@@ -45,7 +44,6 @@ class App extends Component {
         }
       })
   }
-
   renderScores = () => {
     if (this.state.countryId) {
       return <CountryScores 
@@ -59,9 +57,8 @@ class App extends Component {
 
   render() {
     return (
-    <HashRouter>
-     <div className='main-container'>
-    
+<HashRouter>
+  <div className='main-container'>
      <h1>Live Football Web-page</h1>
      <div className = 'container'>
   <ul className="header">
@@ -75,15 +72,15 @@ class App extends Component {
 		 <Route path="/CountryScores" component={CountryScores}/>
 		 <Route path="/Fixtures" component={Fixtures}/>
      <Route path="/Scores" component={Scores}/>
-	  </div>
-    <section>
+	    </div>
+      <section>
         <Countries onCountrySelect={this.onCountrySelect} />
         {this.renderScores()}
     </section>
       </div>
       </div>
    </HashRouter>
-      );
+     );
     }
 }
 

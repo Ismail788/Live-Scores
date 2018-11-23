@@ -47,7 +47,7 @@ class Fixtures extends Component {
     return (
       <div className='main-container'>
       <div className='fixtures'>
-      <Paper className='fixture-table'>
+     <Paper className='fixture-table'>
       <h3>All fixtures</h3>
       <Table className='fixtures-table'>
         <TableHead>
